@@ -20,15 +20,31 @@ angular.module('twitchtvApp')
             return ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
         }
         
-        mainFac.getData = function(users) { 
+        
+        
+        mainFac.getUrls = function(users) {
+            
+            var urls = [];
+            
+            for (var i = 0; i < users.length; i++) {
+                urls.push('https://api.twitch.tv/kraken/streams/' + users[i]);
+                console.log(urls[i] + 'was pushed in getURL service');
+            }
+            console.log('Urls outside of for loop: ' + urls + '\n');
+            console.log('# of urls ' + urls.length);
+            
+            return urls;
+        }
+        
+        mainFac.getData = function(urls) { 
             
             var userData = [];
             
-            for (var i = 0; i < users.length; i++) {
-                $http.get('https://api.twitch.tv/kraken/streams/' + users[i]).then(function(data) {
-                        //console.log(data);
-                        userData.push(data);
-                    })
+            for (var i = 0; i < urls.length; i++) {
+                $http.get(urls).then(function(data) {
+                    console.log(data);
+                    userData.push(data);
+                })
             };
             
             return userData;

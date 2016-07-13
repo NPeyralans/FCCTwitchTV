@@ -7,10 +7,11 @@ angular.module('twitchtvApp')
         $scope.users = mainFactory.getUsers();
         console.log('Users passed to GetData: ' + $scope.users);
         
-        $scope.usersData = mainFactory.getData($scope.users);
-        if ($scope.usersData) {
-            console.log($scope.usersData);
-        } 
+        $scope.urls = mainFactory.getUrls($scope.users);
+        console.log('urls in ctrl' + $scope.urls);
+        
+        //$scope.usersData = mainFactory.getData($scope.users);
+
         //console.log('usersData in ctrl\n' + $scope.usersData);
         
         // See if they are online
