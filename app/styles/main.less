@@ -1,0 +1,60 @@
+@blue: #260126;
+@orange: #DE4400;
+@yellow: #FFD900;
+@font-header: 'PF Bague Sans Pro Bold';
+@font-body: 'PF Bague Sans Pro Medium';
+/* font-family: 'PF Bague Sans Pro Bold'
+font-family: 'PF Bague Sans Pro'
+font-family: 'PF Bague Sans Pro Medium'
+font-family: 'PF Bague Sans Pro Light' */
+
+body {
+    background: @blue;
+    color: @orange;
+    align: center;
+    
+    .title {
+        font-family: @font-header;
+        text-shadow: -1px 1px 1px #fff;
+        font-size: 70px;
+        font-weight: 900;
+        letter-spacing: 10px;
+        padding: 65px;
+        text-align: center;
+    }
+    
+    .media {
+        font-family: @font-body;
+        border: solid @yellow;
+        padding: 0px;
+        color: @yellow;
+        
+        &:hover {
+            box-shadow: -5px 5px 5px #fff;
+        }
+    }
+    
+    .media-object {
+        padding: 40px;
+    }
+    
+    .media-body {
+        padding: 40px;   
+    }
+}
+
+
+.link-unstyled {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.link-unstyled:link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.link-unstyled:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
