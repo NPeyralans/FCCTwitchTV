@@ -10,8 +10,13 @@ angular.module('twitchtvApp')
                 return "THIS IS TEH TITEL";
         } */
         
-        mainFac.getFCC = function() {                                  $http.get('https://api.twitch.tv/kraken/streams/freecodecamp').then(function(data) {
-                    console.log(data);
+        mainFac.getFCC = function() {                                  $http.get('https://api.twitch.tv/kraken/streams/freecodecamp').then(function(response) {
+                    // Prints data that I need
+                    console.log(response.data._links.self);
+            
+                    // Does not return data that I need!
+                    // Returns UNDEFINED
+                    return response.data._links.self;
                 })
         }
         

@@ -4,6 +4,9 @@ angular.module('twitchtvApp')
         
         //$scope.title = mainFactory.getTitle();
         
+        $scope.fcc_self = mainFactory.getFCC();
+        console.log('fcc_self\t' + $scope.fcc_self);
+        
         $scope.users = mainFactory.getUsers();
         //console.log('Users passed to GetData: ' + $scope.users);
         
