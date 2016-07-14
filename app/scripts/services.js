@@ -54,7 +54,9 @@ angular.module('twitchtvApp')
                             
             };
             
-            console.log('currentData outside for-loop:\t' + userData);
+            // RETURNS UNDEFINED:
+            console.log('userData outside for-loop:\t' + userData);
+            
             return userData;
         }
         

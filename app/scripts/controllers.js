@@ -11,6 +11,9 @@ angular.module('twitchtvApp')
         //console.log('urls in ctrl' + $scope.urls);
         
         $scope.userData = mainFactory.getData($scope.urls);
+                
+        // RETURNS UNDEFINED:
+        console.log('usersData in ctrl\n' + $scope.usersData);
         
         /*
         $scope.userData = [];
@@ -24,8 +27,7 @@ angular.module('twitchtvApp')
             })
         };
         */
-        
-        console.log('usersData in ctrl\n' + $scope.usersData);
+
 
         //$scope.usersData = mainFactory.getData($scope.urls);
         
