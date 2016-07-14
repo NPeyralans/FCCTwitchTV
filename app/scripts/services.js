@@ -10,20 +10,15 @@ angular.module('twitchtvApp')
                 return "THIS IS TEH TITEL";
         } */
         
-        
-        /*
         mainFac.getFCC = function() {                                  $http.get('https://api.twitch.tv/kraken/streams/freecodecamp').then(function(data) {
                     console.log(data);
                 })
         }
-        */
         
         mainFac.getUsers = function() {
             //console.log('inside getusers');
             return ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
         }
-        
-        
         
         mainFac.getUrls = function(users) {
             
@@ -38,28 +33,29 @@ angular.module('twitchtvApp')
             
             return urls;
         }
-        
+   
         mainFac.getData = function(urls) { 
-            
             var userData = [];
-            var testArray = [];
-            
             for (var i = 0; i < urls.length; i++) {
-                currentData = $http.get(urls[i]);
-                console.log('currentData:\t' + currentData);
                 
-                userData.push(currentData);
-                console.log('i: \t' + i);
+                currentPromise = $http.get(urls[i]);  
+                currentPromise.then(
                     
-                /*    .then(function(data) {
-                        userData.push(data);
-                    })
-                */
+                    function(success) {
+                    
+                        currentData = success.data;
+                        console.log('currentData: \t' + currentData);
+                        userData.push(currentData);
+                    
+                }, 
+                    function(failure) {
+                        console.log('Promise resolution failed.');   
+                });
+                            
             };
-            console.log('testArray :\t ' + testArray);
-            console.log('userData in factory getData: ' + userData);
-            return userData;
             
+            console.log('currentData outside for-loop:\t' + userData);
+            return userData;
         }
         
         return mainFac;

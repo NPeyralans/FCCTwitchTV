@@ -24,14 +24,14 @@
     <div class="row">
       <h1 class="col-xs-12 title center">TwitchTV</h1>
         <ul class="col-xs-12 center">
-            <li class="list-unstyled">
+            <li class="list-unstyled" ng-repeat="user in usersData">
                 <div class="media">
                   <a class="media-left link-unstyled" href="#">
-                    <img class="media-object" data-src="{{user.image}}" alt="avatar">
+                    <img class="media-object" data-src="#" alt="avatar">
                   </a>
                   <div class="media-body">
-                    <h4 class="media-heading">{{user.name}}</h4>
-                    {{user.stream}}TEST STUFF
+                    <h4 class="media-heading"></h4>
+                    {{user.data}}
                   </div>
                 </div>
             </li>
